@@ -24,6 +24,7 @@
     "astro-seo": "^0.8.0",
     "daisyui": "^3.2.1",
     "dayjs": "^1.11.9",
+    "flowbite": "^2.3.0",
     "sharp": "^0.33.0"
   },
   "devDependencies": {
