@@ -1,13 +1,114 @@
 ---
 const today = new Date();
+const currentPath = Astro.url.pathname;
+const isIndexPage = currentPath === "/" || currentPath === "";
 ---
 
 <footer class="footer footer-center block mb-5 pt-10">
     <div class="pb-2">
         &copy; {today.getFullYear()} Oyewunmi Oluwaseyi
     </div>
-    <div class="inline opacity-75">
-        <!-- Thanks for using this template. You can keep this line to support my work :) -->
-    </div>
+    {isIndexPage && (
+        <div class="inline opacity-75 relative w-full">
+            <div class="fixed-illustrations">
+                {/* Main illustration - Person on Sofa */}
+                <div class="absolute bottom-10 right-20 transform opacity-30">
+                    <img 
+                        src="/illustrations/Person-Sitting-On-Their-Sofa-And-Working-V1.svg" 
+                        alt="Person sitting on sofa"
+                        width="400"
+                        height="400"
+                        class="illustration"
+                    />
+                </div>
+
+                {/* Wireless Technology */}
+                <div class="absolute bottom-[60%] right-[3%] transform opacity-30">
+                    <img 
+                        src="/illustrations/Wireless-Technology.svg" 
+                        alt="Wireless Technology"
+                        width="270"
+                        height="200"
+                        class="illustration"
+                    />
+                </div>
+
+                {/* Chat Bot */}
+                <div class="absolute bottom-[50%] left-[3%] transform opacity-30">
+                    <img 
+                        src="/illustrations/Chat-Bot.svg" 
+                        alt="Chat Bot"
+                        width="200"
+                        height="150"
+                        class="illustration"
+                    />
+                </div>
+
+                {/* Dreaming */}
+                <div class="absolute bottom-[30%] right-[9%] transform opacity-30">
+                    <img 
+                        src="/illustrations/Dreaming.svg" 
+                        alt="Dreaming"
+                        width="200"
+                        height="200"
+                        class="illustration"
+                    />
+                </div>
+
+                {/* Person Working at Standing Desk */}
+                <div class="absolute bottom-10 left-20 transform opacity-30">
+                    <img 
+                        src="/illustrations/Person-Working-At-Standing-Desk-V3.svg" 
+                        alt="Person at standing desk"
+                        width="300"
+                        height="300"
+                        class="illustration"
+                    />
+                </div>
+            </div>
+        </div>
+    )}
 </footer>
-<style></style>
+
+<style>
+    .fixed-illustrations {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .illustration {
+        transition: all 0.3s ease;
+    }
+
+    .illustration:hover {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+
+    /* Make sure the illustrations don't interfere with the sidebar */
+    @media (min-width: 1024px) {
+        .fixed-illustrations {
+            left: 19rem; /* Matches the sidebar width */
+            width: calc(100% - 19rem);
+        }
+    }
+
+    /* Ensure the footer content stays above the illustrations */
+    .footer {
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+        .illustration {
+            width: 50%; /* Make illustrations smaller on mobile */
+            height: auto;
+        }
+    }
+</style>
