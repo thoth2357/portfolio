@@ -7,8 +7,8 @@ const { sideBarActiveItemID } = Astro.props;
 
 <div class="drawer-side z-40">
   <label for="my-drawer" class="drawer-overlay"></label>
-  <aside class="px-2 pt-2 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col">
-    <div class="w-fit mx-auto mt-5 mb-6">
+  <aside class="px-2 pt-2 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col relative">
+    <div class="w-fit mx-auto mt-5 mb-2">
       <a href="/">
         <div class="avatar transition ease-in-out hover:scale-[102%] block m-auto">
           <div class="w-[12.5rem]">
@@ -17,7 +17,20 @@ const { sideBarActiveItemID } = Astro.props;
         </div>
       </a>
     </div>
+    <div class="text-center mb-4 text-sm">
+      <span class="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-transparent bg-clip-text font-normal tracking-wide leading-relaxed" style="text-shadow: 0 0 1px rgba(251, 191, 36, 0.2); word-spacing: 0.5em; letter-spacing: 0.1em;">
+        𓃀𓅃𓄿𓂋  𓏏𓉔  𓃀𓄿𓂋𓂋𓈖𓈖𓋴𓋴  𓆑  𓄿  𓃀𓅲𓋴𓇌  𓃭𓇋𓆑
+      </span>
+    </div>
+    
     <SideBarMenu sideBarActiveItemID={sideBarActiveItemID} />
+    
+    <div class="text-center mb-4 text-sm mt-auto">
+      <span class="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-transparent bg-clip-text font-normal tracking-wide leading-relaxed" style="text-shadow: 0 0 1px rgba(251, 191, 36, 0.2); word-spacing: 0.5em; letter-spacing: 0.1em;">
+        𓏏𓉔  𓈖𓃭𓇌  𓏏𓂋𓅲  𓅃𓇋𓋴𓂧𓅓  𓇋𓋴  𓇋𓈖  𓈎𓈖𓅃𓇋𓈖𓎼  𓇌𓅲  𓈎𓈖𓅃  𓈖𓏏𓉔𓇋𓈖𓎼
+      </span>
+    </div>
+    
     <SideBarFooter />
   </aside>
 </div>
