@@ -9,7 +9,7 @@ const isIndexPage = currentPath === "/" || currentPath === "";
         &copy; {today.getFullYear()} Oyewunmi Oluwaseyi
     </div>
     {isIndexPage && (
-        <div class="inline opacity-50 relative w-full">
+        <div class="inline opacity-2 relative w-full">
             <div class="fixed-illustrations">
                 {/* Main illustration - Person on Sofa */}
                 <div class="absolute bottom-0 right-20 transform opacity-30">
@@ -105,10 +105,11 @@ const isIndexPage = currentPath === "/" || currentPath === "";
     }
 
     /* Responsive adjustments for smaller screens */
-    @media (max-width: 768px) {
+    @media (max-width: 425px) {
         .illustration {
             width: 50%; /* Make illustrations smaller on mobile */
             height: auto;
+            opacity: 0.4 /* Increased opacity for better visibility on mobile */
         }
     }
 </style>
