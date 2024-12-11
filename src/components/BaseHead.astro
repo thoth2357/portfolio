@@ -38,6 +38,19 @@ const mod_title = "Oluwaseyi Folio | ".concat(title)
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
+<!-- Google tag (gtag.js) -->
+<script type="text/partytown">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  
+  // Initialize before loading GA
+  gtag('js', new Date());
+  gtag('config', 'G-STCRM4R7GH', {
+    page_path: window.location.pathname,
+  });
+</script>
+<script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-STCRM4R7GH"></script>
+
 <script
     type="module"
     src="/node_modules/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js"
