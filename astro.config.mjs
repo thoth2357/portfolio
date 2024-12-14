@@ -37,7 +37,15 @@ export default defineConfig({
 		}),
 		partytown({
 			config: {
-				forward: ["dataLayer.push"],
+				forward: ["dataLayer.push", "gtag"],
+				resolveUrl: (url) => {
+					if (url.hostname === 'www.googletagmanager.com') {
+						const proxyUrl = new URL(url);
+						proxyUrl.hostname = url.hostname;
+						return proxyUrl;
+					}
+					return url;
+				},
 			},
 		}),
 	],

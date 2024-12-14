@@ -30,9 +30,13 @@ const { image, title = SITE_TITLE, description = SITE_DESCRIPTION, includeSideba
     <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-YGGVB7TZDD"></script>
     <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      window.gtag = function gtag(){
+        window.dataLayer.push(arguments);
+      }
       gtag('js', new Date());
-      gtag('config', 'G-YGGVB7TZDD');
+      gtag('config', 'G-YGGVB7TZDD', {
+        page_path: window.location.pathname,
+      });
     </script>
   </head>
   <body>
