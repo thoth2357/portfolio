@@ -150,65 +150,29 @@ const last_posts = posts.slice(0, 3);
 
 		nextButton.addEventListener("click", function () {
 			if (activity1.classList.contains("visible")) {
-				activity1.classList.remove("visible");
-				activity1.classList.add("hidden");
-
-				activity2.classList.remove("hidden");
-				activity2.classList.add("visible");
-
+				activity1.classList.replace("visible", "hidden");
+				activity2.classList.replace("hidden", "visible");
 				prevButton.classList.remove("hidden");
-
-				// Check if the last activity is visible, hide the next button
-				if (activity2.classList.contains("last-activity")) {
-					nextButton.classList.add("hidden");
-				}
-
-				// Update Today's Activity based on the currently visible figure
 				activityTitle.textContent = "Music Activity 🎧";
 			} else if (activity2.classList.contains("visible")) {
-				activity2.classList.remove("visible");
-				activity2.classList.add("hidden");
-
-				activity3.classList.remove("hidden");
-				activity3.classList.add("visible");
-
-				// Check if the last activity is visible, hide the next button
-				if (activity3.classList.contains("last-activity")) {
-					nextButton.classList.add("hidden");
-				}
-
-				// Update Today's Activity based on the currently visible figure
+				activity2.classList.replace("visible", "hidden");
+				activity3.classList.replace("hidden", "visible");
+				nextButton.classList.add("hidden");
 				activityTitle.textContent = "LeetCode Activity 🧠";
 			}
 		});
 
 		prevButton.addEventListener("click", function () {
-			if (activity2.classList.contains("visible")) {
-				activity2.classList.remove("visible");
-				activity2.classList.add("hidden");
-
-				activity1.classList.remove("hidden");
-				activity1.classList.add("visible");
-
-				prevButton.classList.add("hidden");
+			if (activity3.classList.contains("visible")) {
+				activity3.classList.replace("visible", "hidden");
+				activity2.classList.replace("hidden", "visible");
 				nextButton.classList.remove("hidden");
-
-				// Update Today's Activity based on the currently visible figure
-				activityTitle.textContent = "Coding Activity 👨🏾‍💻";
-			} else if (activity3.classList.contains("visible")) {
-				activity3.classList.remove("visible");
-				activity3.classList.add("hidden");
-
-				activity2.classList.remove("hidden");
-				activity2.classList.add("visible");
-
-				// Check if the last activity is visible, hide the next button
-				if (activity2.classList.contains("last-activity")) {
-					nextButton.classList.add("hidden");
-				}
-
-				// Update Today's Activity based on the currently visible figure
 				activityTitle.textContent = "Music Activity 🎧";
+			} else if (activity2.classList.contains("visible")) {
+				activity2.classList.replace("visible", "hidden");
+				activity1.classList.replace("hidden", "visible");
+				prevButton.classList.add("hidden");
+				activityTitle.textContent = "Coding Activity 👨🏾‍💻";
 			}
 		});
 		var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
