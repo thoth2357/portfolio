@@ -85,16 +85,51 @@ const isIndexPage = currentPath === "/" || currentPath === "";
         transition: all 0.3s ease;
     }
 
-    .illustration:hover {
-        opacity: 0.8;
-        transform: scale(1.05);
-    }
-
-    /* Make sure the illustrations don't interfere with the sidebar */
+    /* Desktop view */
     @media (min-width: 1024px) {
         .fixed-illustrations {
-            left: 19rem; /* Matches the sidebar width */
+            left: 19rem;
             width: calc(100% - 19rem);
+        }
+        .illustration {
+            opacity: 0.3;
+        }
+    }
+
+    /* Mobile view adjustments */
+    @media (max-width: 1023px) {
+        .fixed-illustrations {
+            opacity: 0.1; /* Reduced opacity for mobile */
+        }
+        
+        .illustration {
+            transform: scale(0.7); /* Smaller illustrations on mobile */
+            opacity: 0.08; /* Even more transparent on mobile */
+        }
+
+        /* Adjust positioning for better mobile layout */
+        div[class*="bottom-"] {
+            bottom: 50% !important; /* Move illustrations higher up */
+        }
+
+        /* Increase spacing between illustrations */
+        div[class*="right-"] {
+            right: 15% !important;
+        }
+
+        div[class*="left-"] {
+            left: 15% !important;
+        }
+    }
+
+    /* Extra small screens */
+    @media (max-width: 480px) {
+        .fixed-illustrations {
+            opacity: 0.05; /* Even more transparent for very small screens */
+        }
+        
+        .illustration {
+            transform: scale(0.5); /* Even smaller illustrations */
         }
     }
 
@@ -102,14 +137,5 @@ const isIndexPage = currentPath === "/" || currentPath === "";
     .footer {
         position: relative;
         z-index: 1;
-    }
-
-    /* Responsive adjustments for smaller screens */
-    @media (max-width: 425px) {
-        .illustration {
-            width: 50%; /* Make illustrations smaller on mobile */
-            height: auto;
-            opacity: 0.4 /* Increased opacity for better visibility on mobile */
-        }
     }
 </style>
