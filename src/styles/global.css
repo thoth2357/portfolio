@@ -35,6 +35,12 @@
 
 .book-spine {
     position: relative;
+    width: 45px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0 10px 0;
 }
 
 .book-decoration::before {
@@ -157,12 +163,16 @@
 
 .spine-title {
     writing-mode: vertical-rl;
+    text-orientation: mixed;
     transform: rotate(180deg);
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.85rem;
-    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1;
     padding: 0 4px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 80%;
+    margin: auto 0;
 }
 
 .spine-bands {
@@ -427,8 +437,9 @@
 
 /* Adjust position for spine dots */
 .book-spine .status-dot {
-    top: 4px;
-    left: 4px;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 4px;
     height: 4px;
 }
