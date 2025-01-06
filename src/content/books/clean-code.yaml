@@ -1,0 +1,8 @@
+title: "Clean Code"
+coverImage: "/pragmatic-programmer.jpg"
+type: "book"
+status: "current"
+color:
+  primary: "#8B4513"
+  secondary: "#A0522D"
+order: 1

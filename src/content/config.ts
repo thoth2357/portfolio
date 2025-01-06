@@ -1,20 +1,21 @@
 import { z, defineCollection } from "astro:content";
-const blogSchema = z.object({
-    title: z.string(),
-    description: z.string(),
-    pubDate: z.coerce.date(),
-    updatedDate: z.string().optional(),
-    heroImage: z.string().optional(),
-    badge: z.string().optional(),
-    tags: z.array(z.string()).refine(items => new Set(items).size === items.length, {
-        message: 'tags must be unique',
-    }).optional(),
+
+const bookCollection = defineCollection({
+    type: "data",
+    schema: z.object({
+        title: z.string(),
+        type: z.enum(["book", "paper"]),
+        status: z.enum(["current", "next", "queue", "completed"]),
+        color: z.object({
+            primary: z.string(),
+            secondary: z.string(),
+        }),
+        coverImage: z.string(),
+        order: z.number(),
+    }),
 });
 
-export type BlogSchema = z.infer<typeof blogSchema>;
-
-const blogCollection = defineCollection({ schema: blogSchema });
-
 export const collections = {
-    'blog': blogCollection,
-}
+    books: bookCollection,
+    // ... other collections
+};

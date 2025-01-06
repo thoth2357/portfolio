@@ -1,3 +1,439 @@
 .time-line-container>div:last-child .education__time>.education__line {
     display: none;
 }
+
+/* Enhanced Bookshelf Styles */
+.writing-mode-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+}
+
+.book {
+    border-radius: 1px;
+    box-shadow:
+        -2px 2px 5px rgba(0, 0, 0, 0.3),
+        inset -1px 0 0 rgba(255, 255, 255, 0.1);
+    transform-origin: bottom center;
+    position: relative;
+    overflow: hidden;
+}
+
+.book::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%,
+            rgba(0, 0, 0, 0.1) 100%);
+    box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.book-spine {
+    position: relative;
+}
+
+.book-decoration::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.book-decoration::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.shelf {
+    position: relative;
+    margin-top: 4px;
+    height: 18px;
+}
+
+.wood-grain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        repeating-linear-gradient(90deg,
+            rgba(139, 69, 19, 0.8) 0px,
+            rgba(139, 69, 19, 0.9) 2px,
+            rgba(139, 69, 19, 0.7) 4px,
+            rgba(139, 69, 19, 0.8) 6px),
+        linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 50%,
+            rgba(0, 0, 0, 0.2) 100%);
+}
+
+.shelf-support {
+    position: relative;
+    background: linear-gradient(to bottom,
+            #8B4513 0%,
+            #654321 100%);
+}
+
+.shelf-support::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effects */
+.book:hover {
+    z-index: 1;
+    box-shadow:
+        -3px 3px 8px rgba(0, 0, 0, 0.4),
+        inset -1px 0 0 rgba(255, 255, 255, 0.2);
+}
+
+.book-title {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Enhanced 3D Book Styles */
+.bookshelf-container {
+    perspective: 1000px;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.book-wrapper {
+    width: 40px;
+    margin: 0 2px;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.book-wrapper:hover {
+    transform: translateY(-6px) rotateX(-20deg);
+}
+
+.book-3d {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.book-spine {
+    position: absolute;
+    width: 45px;
+    height: 100%;
+    transform-origin: left;
+    transform: rotateY(0deg);
+    background-image: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 255, 255, 0) 20%,
+            rgba(0, 0, 0, 0.1) 100%);
+    border-radius: 2px 0 0 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.spine-title {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 0 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.spine-bands {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.spine-bands span {
+    width: 100%;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.book-side {
+    position: absolute;
+    width: 40px;
+    height: 100%;
+    transform: rotateY(90deg) translateZ(20px);
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.book-front {
+    position: absolute;
+    width: 40px;
+    height: 100%;
+    transform: rotateY(90deg) translateZ(40px);
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 0 2px 2px 0;
+}
+
+.shelf {
+    position: relative;
+    height: 12px;
+    background: #8B4513;
+    background-image:
+        linear-gradient(90deg,
+            rgba(139, 69, 19, 0.8) 0%,
+            rgba(139, 69, 19, 1) 20%,
+            rgba(139, 69, 19, 0.8) 100%);
+    border-radius: 2px;
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.4),
+        0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.shelf-edge {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: #654321;
+    border-radius: 0 0 2px 2px;
+}
+
+.shelf-shadow {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.2) 0%,
+            transparent 100%);
+}
+
+/* Ambient lighting effect */
+.books-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% -50%,
+            rgba(255, 255, 255, 0.1) 0%,
+            transparent 70%);
+    pointer-events: none;
+}
+
+/* Status-specific styles */
+.active-book {
+    border-left: 2px solid rgba(218, 165, 32, 0.8);
+}
+
+.upcoming-book {
+    opacity: 0.9;
+}
+
+.completed-book {
+    opacity: 0.7;
+}
+
+.reading-indicator {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: rgba(218, 165, 32, 0.8);
+}
+
+/* Enhanced hover effects based on status */
+.active-book:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 4px 12px rgba(218, 165, 32, 0.2);
+}
+
+.upcoming-book:hover {
+    transform: translateY(-6px);
+}
+
+.completed-book:hover {
+    transform: translateY(-4px);
+}
+
+/* Academic Paper Styles */
+.academic-paper {
+    background: linear-gradient(to right, #94a3b8 0%, #cbd5e1 50%, #94a3b8 100%) !important;
+    border: 1px solid #64748b;
+    box-shadow:
+        -1px 1px 3px rgba(0, 0, 0, 0.2),
+        inset -1px 0 0 rgba(255, 255, 255, 0.4);
+}
+
+.paper-indicator {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: #475569;
+    opacity: 0.8;
+}
+
+.paper-side {
+    background: #94a3b8 !important;
+    border-left: 1px solid #64748b;
+}
+
+.paper-front {
+    background: #cbd5e1 !important;
+    border: 1px solid #64748b;
+}
+
+.active-paper {
+    border-left: 2px solid #3b82f6;
+
+    .paper-indicator {
+        color: #3b82f6;
+    }
+}
+
+.upcoming-paper {
+    opacity: 0.8;
+}
+
+/* Paper-specific hover effects */
+.academic-paper:hover {
+    border-color: #3b82f6;
+
+    .paper-indicator {
+        opacity: 1;
+    }
+}
+
+.spine-title {
+    font-weight: 500;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Current Reading Book Styles */
+.current-book {
+    transform: translateZ(20px);
+    margin-bottom: 2px;
+    z-index: 10;
+}
+
+.book-cover {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(-15deg);
+}
+
+.book-cover img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+    box-shadow:
+        -8px 8px 20px rgba(0, 0, 0, 0.3),
+        2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cover-title {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.reading-badge {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 3px 8px;
+    border-radius: 3px;
+    white-space: nowrap;
+    z-index: 20;
+}
+
+/* Remove any background colors from book-3d for current book */
+.current-book .book-3d {
+    background: none;
+    box-shadow: none;
+}
+
+/* Status dot styling */
+.status-dot {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.status-dot.current {
+    background-color: rgb(52, 211, 153);
+    /* emerald-400 */
+    box-shadow: 0 0 4px rgba(52, 211, 153, 0.4);
+}
+
+.status-dot.next {
+    background-color: rgb(251, 191, 36);
+    /* amber-400 */
+    box-shadow: 0 0 4px rgba(251, 191, 36, 0.4);
+}
+
+.status-dot.queue {
+    background-color: rgb(99, 102, 241);
+    /* indigo-400 */
+    box-shadow: 0 0 4px rgba(99, 102, 241, 0.4);
+}
+
+.status-dot.completed {
+    background-color: rgb(163, 163, 163);
+    /* neutral-400 */
+    box-shadow: 0 0 4px rgba(163, 163, 163, 0.4);
+}
+
+/* Adjust position for spine dots */
+.book-spine .status-dot {
+    top: 4px;
+    left: 4px;
+    width: 4px;
+    height: 4px;
+}
+
+/* Remove the reading badge since we're using dots now */
+.reading-badge {
+    display: none;
+}
