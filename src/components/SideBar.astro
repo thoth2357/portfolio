@@ -9,10 +9,11 @@ const { sideBarActiveItemID } = Astro.props;
   <label for="my-drawer" class="drawer-overlay"></label>
   <aside class="px-2 pt-2 h-auto min-h-full w-[19rem] bg-base-200 text-base-content flex flex-col relative">
     <div class="w-fit mx-auto mt-5 mb-2">
-      <a href="/">
-        <div class="avatar transition ease-in-out hover:scale-[102%] block m-auto">
-          <div class="w-[12.5rem]">
-            <Image class="mask mask-circle" format="webp" width={500} height={500} src="/profile.gif" alt="Profile image" />
+      <a href="/" id="profileLink">
+        <div class="avatar transition ease-in-out hover:scale-[102%] block m-auto" id="profileAvatar">
+          <div class="w-[12.5rem] transition-opacity duration-300 relative">
+            <Image class="mask mask-circle" format="webp" width={500} height={500} src="/profile.gif" alt="Profile image" id="mainProfileImage" />
+            <Image class="mask mask-circle absolute top-0 left-0" format="webp" width={300} height={300} src="/profile-alt.jpeg" alt="Alternate profile" id="altProfileImage" style="opacity: 0;" />
           </div>
         </div>
       </a>
@@ -33,3 +34,37 @@ const { sideBarActiveItemID } = Astro.props;
     <SideBarFooter />
   </aside>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const profileLink = document.getElementById('profileLink');
+  let isAlternate = false;
+
+  function toggleProfileImage(e) {
+    e.preventDefault();
+    const mainImg = document.getElementById('mainProfileImage');
+    const altImg = document.getElementById('altProfileImage');
+    
+    if(!isAlternate) {
+      mainImg.style.opacity = '0';
+      altImg.style.opacity = '1';
+    } else {
+      altImg.style.opacity = '0';
+      mainImg.style.opacity = '1';
+    }
+    
+    isAlternate = !isAlternate;
+  }
+
+  profileLink.addEventListener('click', toggleProfileImage);
+});
+</script>
+
+<style>
+#mainProfileImage, #altProfileImage {
+  transition: opacity 0.3s ease !important;
+}
+#profileAvatar:hover img {
+  transform: rotateY(10deg) rotateX(10deg);
+}
+</style>
