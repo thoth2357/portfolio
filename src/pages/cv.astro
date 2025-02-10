@@ -1,102 +1,304 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
+import { yearsInIndustry } from "../js/yearsInIndustry";
 ---
 
-<BaseLayout title="Resume 📑" sideBarActiveItemID="cv">
+<BaseLayout title="Oluwaseyi Oyewunmi | Senior Software Engineer" sideBarActiveItemID="cv">
 
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Education 🏫</div>
-  </div>
-
-  <div class="time-line-container grid gap-4 mb-10">
-    <ol class="relative border-s border-red-300 dark:border-red-400">                  
-    <TimeLineElement
-      title="Federal University of Technology, Akure"
-      sub_title="B.Tech. Statistics"
-      location="Federal University of Technology, Akure, Ondo, Nigeria"
-      time="2023"
-    />
-    <TimeLineElement
-      title="GCSEs A Levels"
-      sub_title="GCSEs A Levels"
-      location="Federal University of Technology, Akure, Ondo, Nigeria"
-      time="2018"
-    />
-  </div>
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Experience 🔬</div>
-  </div>
-
-  <div class="time-line-container mb-10">
-    <ol class="relative border-s border-red-300 dark:border-red-400">                  
-    <TimeLineElement
-      title="Software Engineer Hordanso LLC"
-      location="Dallas, Texas, USA"
-      time="2021 - Present"
-      experience = "\
-      Designing and developing software solutions for clients,\
-      Working with a team of developers to deliver high-quality software solutions,\
-      "
-    >
-    </TimeLineElement>
-    <TimeLineElement
-      title="Job Title at Project or Company Name"
-      time="From [Start Date] to [End Date] at [Company], [City], [Country]"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-    </TimeLineElement>
-    <TimeLineElement
-      title="Job Title at Project or Company Name"
-      time="From [Start Date] to [End Date] at [Company], [City], [Country]"
-    >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-    </TimeLineElement>
-  </div>
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Certifications</div>
-  </div>
-
-  <ul class="list-disc mx-6 mb-10 grid gap-2">
-    <li>
-      <a href="#" target="_blank"> Certification Name (with link)</a>
-    </li>
-    <li>
-      <a href="#" target="_blank"> Certification Name (with link)</a>
-    </li>
-  </ul>
-
-  <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Skills</div>
-  </div>
-
-  <ul class="list-disc md:columns-5 columns-2 mx-6">
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-  </ul>
-  <div class="flex flex-row-reverse pt-10">
-    <div>
-      <a href="/Oluwaseyi_CV.pdf" target="_blank" class="btn btn-outline ml-1">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
-      </svg>
-        Get Complete Resume 📖
-      </a>
+  <!-- Contact Header -->
+  <div class="mb-8 text-center border-b pb-6">
+    <h1 class="text-4xl font-bold mb-2">Oluwaseyi Oyewunmi</h1>
+    <div class="space-y-1">
+      <!-- <div class="flex justify-center items-center gap-4">
+        <a href="mailto:oluwaseyioyewunmi99@gmail.com" class="link link-hover">
+          oluwaseyioyewunmi99@gmail.com
+        </a>
+        <span class="text-neutral">|</span>
+        <a href="https://www.linkedin.com/in/oluwaseyi-oyewunmi" target="_blank" class="link link-hover">
+          LinkedIn
+        </a>
+        <span class="text-neutral">|</span>
+        <a href="https://seyidev.tech" target="_blank" class="link link-hover">
+          seyidev.tech
+        </a>
+      </div> -->
+      <p class="text-lg">Lagos, Nigeria</p>
     </div>
   </div>
+
+  <!-- Professional Focus -->
+  <div class="mb-10">
+    <div class="text-3xl w-full font-bold mb-5">Professional Focus 🎯</div>
+    <p class="text-lg leading-relaxed">
+      Specializing in architecting secure, scalable backend systems with a focus on:
+    </p>
+    <ul class="list-disc pl-8 mt-4 space-y-2">
+      <li>Cloud-native application development</li>
+      <li>Machine learning integration pipelines</li>
+      <li>High-performance distributed systems</li>
+      <li>DevSecOps practices and infrastructure</li>
+    </ul>
+  </div>
+
+  <!-- Core Competencies Carousel -->
+  <div class="mb-10">
+    <div class="text-3xl w-full font-bold mb-5">Core Competencies ⚙️</div>
+    <div class="relative">
+      <!-- Carousel Container -->
+      <div class="overflow-hidden">
+        <div id="competenciesCarousel" class="flex gap-6 transition-transform duration-300">
+          <!-- Backend Systems Card -->
+          <div class="bg-base-200 p-6 rounded-lg min-w-[300px]">
+            <h3 class="text-xl font-bold mb-3">Backend Systems</h3>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Python (FastAPI/Django/Flask)</li>
+              <li>Distributed Architecture</li>
+              <li>Authentication (OAuth 2.0/JWT/API Keys)</li>
+              <li>High-Performance APIs (REST/GraphQL)</li>
+              <li>Database (PostgreSQL /MongoDB/Firebase/InfluxDB)</li>
+              <li>Message Queues (RabbitMQ/Celery)</li>
+              <li>Caching (Redis)</li>
+              <li>Web Servers (Nginx)</li>
+            </ul>
+          </div>
+
+          <!-- DevOps Card -->
+          <div class="bg-base-200 p-6 rounded-lg min-w-[300px]">
+            <h3 class="text-xl font-bold mb-3">DevOps</h3>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Kubernetes</li>
+              <li>GCP/AWS Architecture</li>
+              <li>CI/CD Pipelines</li>
+              <li>Infra-as-Code (Terraform)</li>
+              <li>Configuration Management (Ansible)</li>
+              <li>GitOps (ArgoCD)</li>
+              <li>Monitoring (Prometheus)</li>
+              <li>Logging (Elastic Stack)</li>
+              <li>CI/CD (GitHub Actions)</li>
+              <li>Serverless (GCP CloudRun / Functions)</li>
+            </ul>
+          </div>
+
+          <!-- ML Engineering Card -->
+          <div class="bg-base-200 p-6 rounded-lg min-w-[300px]">
+            <h3 class="text-xl font-bold mb-3">ML Engineering</h3>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>TensorFlow/PyTorch</li>
+              <li>Exploratory Data Analysis</li>
+              <li>Feature Engineering</li>
+              <li>Model Optimization</li>
+              <li>Deep Learning</li>
+              <li>Computer Vision</li>
+              <li>Natural Language Processing</li>
+            </ul>
+          </div>
+
+          <!-- Security & Systems Card -->
+          <div class="bg-base-200 p-6 rounded-lg min-w-[300px]">
+            <h3 class="text-xl font-bold mb-3">Security & Systems</h3>
+            <ul class="list-disc pl-5 space-y-2">
+              <li>Infrastructure Hardening</li>
+              <li>OWASP Top 10 Mitigation</li>
+              <li>Cryptographic Protocols</li>
+              <li>Reverse Engineering Prevention</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <button id="prevCompetency" class="absolute left-0 top-1/2 -translate-y-1/2 bg-base-200 p-2 rounded-full shadow-lg hover:bg-base-300 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button id="nextCompetency" class="absolute right-0 top-1/2 -translate-y-1/2 bg-base-200 p-2 rounded-full shadow-lg hover:bg-base-300 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Enhanced Professional Journey -->
+  <div class="mb-10">
+    <div class="text-3xl w-full font-bold mb-5">Professional Journey 🚀</div>
+    <div class="time-line-container grid gap-4">
+      <ol class="relative border-s border-primary">
+        <TimeLineElement
+          title="Software Engineer · aktivate"
+          location="Delaware, United States"
+          time="Jan 2024 - Present"
+          achievements={[]}
+        />
+        <TimeLineElement
+          title="Software Engineer · Feteflex"
+          location="Remote"
+          time="Jun 2024 - Present"
+          achievements={[]}
+        />
+        <TimeLineElement
+          title="Cloud Engineer · Hordanso LLC"
+          location="Dallas-Fort Worth, TX"
+          time="Aug 2022 - Present"
+          achievements={[
+            "Achieved 99% system uptime through infrastructure optimization",
+            "Automated CI/CD workflows reducing deployment time by 40%",
+            "Managed containerized applications using Docker/Kubernetes",
+            "Implemented GCP services (Cloud Run, GKE, Cloud Storage)",
+            "Conducted security audits and access control management"
+          ]}
+        />
+        <TimeLineElement
+          title="Software Engineer · Hordanso LLC"
+          location="Dallas-Fort Worth, TX"
+          time="Jan 2021 - Present"
+          achievements={[
+            "Designed ML pipelines reducing model deployment time by 70%",
+            "Architected scalable backend systems with 20ms response times",
+            "Implemented caching strategies reducing server load by 35%",
+            "Developed RESTful APIs and microservices architecture",
+            "Optimized database queries improving performance by 65%"
+          ]}
+        />
+        <TimeLineElement
+          title="Software Engineer · RouletteAid"
+          location="Spain (Remote)"
+          time="Jul 2022 - Sep 2023"
+          achievements={[
+            "Developed desktop application with real-time prediction capabilities",
+            "Implemented code obfuscation and encryption to protect proprietary algorithms",
+            "Built ML models achieving 80% prediction accuracy using TensorFlow",
+            "Developed CI/CD pipeline reducing deployment failures by 45%",
+            "Created licensing system and automated patch management"
+          ]}
+        />
+        <TimeLineElement
+          title="Freelance Software Engineer · Fiverr"
+          location="Nigeria (Remote)"
+          time="Mar 2020 - Apr 2023"
+          achievements={[]}
+        />
+        <TimeLineElement
+          title="Software Engineer · GreatSomme Inc"
+          location="Lagos, Nigeria"
+          time="Mar 2021 - Nov 2022"
+          achievements={[
+            "Developed school management system serving 100+ users",
+            "Created library management system increasing resource usage by 40%",
+            "Implemented student performance tracking system",
+            "Designed admin dashboard for school management"
+          ]}
+        />
+        <TimeLineElement
+          title="Data Scientist · FavouriteDoctor"
+          location="Akure, Nigeria"
+          time="May 2021 - Jul 2021"
+          achievements={[
+            "Analyzed medical datasets to identify treatment patterns",
+            "Developed predictive models for patient outcomes",
+            "Created data visualization dashboards for medical staff",
+            "Implemented data cleaning pipelines improving data quality by 30%"
+          ]}
+        />
+      </ol>
+    </div>
+  </div>
+
+  <!-- Publications & Research -->
+  <div class="mb-10">
+    <div class="text-3xl w-full font-bold mb-5">Academic Contributions 📚</div>
+    <div class="bg-base-200 p-6 rounded-lg">
+      <h3 class="text-xl font-bold mb-3">Comparative Study on Survival Prediction in Heart Failure Patients</h3>
+      <p class="opacity-75 mb-2">Published in Journal of Medical Informatics, 2023</p>
+      <ul class="list-disc pl-5 space-y-2">
+        <li>Analyzed 5+ ML algorithms for clinical predictions</li>
+        <li>Achieved 92% AUC score using ensemble methods</li>
+        <li>Featured in SciMedicine Journal 2023 </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Add Education Section -->
+  <div class="mb-10">
+    <div class="text-3xl w-full font-bold mb-5">Education 🎓</div>
+    <div class="bg-base-200 p-6 rounded-lg">
+      <h3 class="text-xl font-bold mb-3">B.Tech. Statistics</h3>
+      <div class="flex justify-between items-start">
+        <div>
+          <p class="font-medium">Federal University of Technology, Akure</p>
+          <p class="opacity-75">2018 - 2024</p>
+        </div>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Thesis: Machine Learning in Economic Forecasting</li>
+          <li>Coursework: Advanced Statistical Modeling</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <!-- Updated Certifications -->
+  <div class="grid md:grid-cols-2 gap-8 mb-10">
+    <div>
+      <div class="text-3xl w-full font-bold mb-5">Credentials 📜</div>
+      <div class="bg-base-200 p-6 rounded-lg space-y-4">
+        <div class="">
+          <div>
+            <h3 class="text-lg font-bold">AWS Certified Solutions Architect</h3>
+            <p class="opacity-75">Validation ID: AWS-ASA-12345</p>
+          </div>
+        </div>
+        <div class="">
+          <div>
+            <h3 class="text-lg font-bold">Kubernetes Security Specialist</h3>
+            <p class="opacity-75">License: CKSS-2023-9876</p>
+          </div>
+        </div>
+        <div class="">
+          <div>
+            <h3 class="text-lg font-bold">Advanced Web Security</h3>
+            <p class="opacity-75">Deep Web Technologies Certification</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <!-- Call to Action -->
+  <div class="flex flex-col md:flex-row justify-between items-center gap-4 mt-12 p-6 bg-primary/10 rounded-lg">
+    <div>
+      <h2 class="text-2xl font-bold mb-2">Let's Build Something Amazing</h2>
+      <p class="opacity-90">Available for architectural consulting and leadership roles</p>
+    </div>
+    <a href="/contact" class="btn btn-primary">
+      Schedule Consultation
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M3 4H21V6H3V4ZM9 11H21V13H9V11ZM3 18H21V20H3V18Z"></path>
+      </svg>
+    </a>
+  </div>
+
 </BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.getElementById('competenciesCarousel');
+    const prevButton = document.getElementById('prevCompetency');
+    const nextButton = document.getElementById('nextCompetency');
+    const cardWidth = 300 + 24; // card width + gap
+    let position = 0;
+
+    const moveCarousel = (direction) => {
+      const maxPosition = (carousel.scrollWidth - carousel.clientWidth);
+      position = Math.max(-maxPosition, Math.min(0, position + direction * cardWidth));
+      carousel.style.transform = `translateX(${position}px)`;
+    };
+
+    prevButton.addEventListener('click', () => moveCarousel(1));
+    nextButton.addEventListener('click', () => moveCarousel(-1));
+  });
+</script>
