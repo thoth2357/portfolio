@@ -21,30 +21,58 @@ const otherBooks = sortedBooks.filter(book => book.data.status !== "current");
 
 	<div class="pb-12 mt-5">
 		<div class="text-xl py-1"><div id="greeting"></div></div>
-		<div class="text-5xl font-bold">I'm Oluwaseyi (Ekpere) Oyewunmi</div>
-		<div class="text-3xl py-3 font-bold">Software Engineer and Conjurer of digital dreams</div>
+		<div class="text-5xl font-bold">Oluwaseyi (Ekpere) Oyewunmi</div>
+		<div class="text-3xl py-3 font-bold">Software Engineer & Systems Architect</div>
 		<div class="py-2">
 			<text class="text-lg">
-				I'm a Software professional from Nigeria with over {yearsInIndustry} years of experience developing software solutions. With a deep passion for cloud, machine learning and AI, I craft intricate digital solutions using multiple technologies. Beyond coding, I seek wisdom from diverse sources, translating it into code. My journey spans Backend Engineering, System administration,Desktop Develoment, DevOps and fantasizing on beautiful UI's 🙈. 
+				Full-stack developer with {yearsInIndustry} years experience building production-grade systems. 
+				Specializing in Python backend development and cloud-native solutions (GCP/AWS). 
+				Proven track record in:
 			</text>
+			<ul class="list-disc pl-8 mt-4 space-y-2">
+				<li>Designing REST/GraphQL APIs handling 5k+ RPM</li>
+				<li>Containerized deployments with Docker/Kubernetes</li>
+				<li>Cloud-native solutions (GCP/AWS)</li>
+				<li>Models training, inference and deployment (TensorFlow/PyTorch)</li>
+			</ul>
 		</div>
-		<div class="flex flex-wrap mt-8">
-			<div class="pb-2">
-				<a
-				class="btn btn-outline btn-secondary ml-5"
-				href="https://www.linkedin.com/in/oluwaseyi-oyewunmi/"
-				target="_blank">
-				Let's connect 🤝🏻 </a>
+		
+		<!-- Technical Snapshot -->
+		<div class="my-6 p-4 bg-base-200 rounded-lg">
+			<div class="flex flex-wrap gap-2">
+				<div class="badge badge-primary">Python</div>
+				<div class="badge badge-secondary">DevOps</div>
+				<div class="badge badge-accent">AWS</div>
+				<div class="badge badge-accent">ML/AI</div>
+				<div class="badge badge-secondary">GCP</div>
+				<div class="badge badge-accent">Kubernetes</div>
+				<div class="badge badge-neutral">TensorFlow</div>
+				<div class="badge">PostgreSQL</div>
+				<div class="badge">FastAPI</div>
+				<div class="badge">Terraform</div>
+				
 			</div>
-			<div class="pb-2">
-				<a href="/projects" target="" class="btn ml-5"> View Projects 💼</a>
-			</div>
-			<div class="pb-2">
-				<a href="/cv" target="" class="btn ml-5"> Resume Peek 📑</a>
-			</div>
-			<div class="pb-2">
-				<a href="/blog" target="" class="btn ml-5"> Read Blog ✍🏾</a>
-			</div>
+		</div>
+
+		<div class="flex flex-wrap mt-8 gap-4">
+			<a href="/projects" class="btn btn-primary">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+					<path d="M13 16v5h-2v-5H4v7h16v-7h-7zm9-9h-7V2h-2v5H4v7h7v-2h2v2h7V7z"/>
+				</svg>
+				View Projects
+			</a>
+			<a href="/cv" class="btn btn-outline btn-secondary">
+				Technical CV 📑
+			</a>
+			<a href="/blog" class="btn btn-outline btn-secondary">
+				Read Blog 📖
+			</a>
+			<a href="https://github.com/thoth2357" target="_blank" class="btn btn-outline">
+				<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+					<path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.089 2.91.833.091-.647.349-1.086.635-1.337-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.03-2.682-.103-.254-.447-1.27.098-2.646 0 0 .84-.269 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.747-1.026 2.747-1.026.547 1.376.203 2.394.1 2.646.64.698 1.026 1.591 1.026 2.682 0 3.841-2.337 4.687-4.565 4.935.359.307.678.915.678 1.846 0 1.335-.012 2.415-.012 2.741 0 .267.18.577.688.48C19.138 20.16 22 16.418 22 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"/>
+				</svg>
+				GitHub
+			</a>
 		</div>
 	</div>
 
