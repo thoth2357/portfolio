@@ -65,58 +65,43 @@ const otherBooks = sortedBooks.filter(book => book.data.status !== "current");
 
 			<figure id="activity1" class="visible w-full">
 				<div class="bookshelf-container relative p-2 -mt-6">
-					<div class="books-wrapper flex items-end gap-[4px] mb-2 px-6 relative h-[140px]">
+					<div class="books-wrapper flex items-end gap-[8px] mb-2 px-6 relative h-[140px]">
 						{/* Currently Reading Book */}
 						{currentBook && (
-							<div class="book-wrapper current-book" style="height: 120px; width: 85px; margin-right: 20px;">
-								<div class="book-3d">
-									<div class="book-cover">
-										<img 
-											src={currentBook.data.coverImage} 
-											alt={currentBook.data.title}
-											class="w-full h-full object-cover"
-										/>
-										<div class="status-dot current"></div>
+							<a href={currentBook.data.url} target="_blank" rel="noopener noreferrer" class="book-link">
+								<div class="book-wrapper current-book" style="height: 120px; width: 85px; margin-right: 12px;">
+									<div class="book-3d">
+										<div class="book-cover">
+											<img 
+												src={currentBook.data.coverImage} 
+												alt={currentBook.data.title}
+												class="w-full h-full object-cover"
+											/>
+											<div class="status-dot current"></div>
+										</div>
 									</div>
 								</div>
-							</div>
+							</a>
 						)}
 
 						{/* Other Books */}
 						{otherBooks.map((book) => (
-							<div class="book-wrapper" style={`height: ${book.data.type === 'paper' ? '105' : '108'}px; ${book.data.type === 'book' ? 'width: 45px;' : ''}`}>
-								<div class="book-3d">
-									<div class={`book-spine ${book.data.type === 'paper' ? 'academic-paper' : ''}`}
-										style={`background: linear-gradient(to right, ${book.data.color.primary} 0%, ${book.data.color.secondary} 50%, ${book.data.color.primary} 100%);`}>
-										<div class={`status-dot ${book.data.status}`}></div>
-										<div class={`spine-title ${book.data.type === 'paper' ? 'text-slate-900' : ''}`}>
-											{book.data.title}
+							<a href={book.data.url} target="_blank" rel="noopener noreferrer" class="book-link">
+								<div class="book-wrapper" style="height: 115px; width: 70px;">
+									<div class="book-3d">
+										<div class="book-cover">
+											<img 
+												src={book.data.coverImage} 
+												alt={book.data.title}
+												class="w-full h-full object-cover"
+											/>
+											<div class={`status-dot ${book.data.status}`}></div>
 										</div>
-										{book.data.type === 'paper' && (
-											<div class="paper-indicator">
-												<svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
-													<path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
-												</svg>
-											</div>
-										)}
-										{book.data.type === 'book' && (
-											<div class="spine-bands">
-												<span></span>
-												<span></span>
-											</div>
-										)}
 									</div>
-									<div class={book.data.type === 'paper' ? 'book-side paper-side' : 'book-side'}></div>
-									<div class={book.data.type === 'paper' ? 'book-front paper-front' : 'book-front'}></div>
 								</div>
-							</div>
+							</a>
 						))}
 					</div>
-
-					<!-- <div class="shelf">
-						<div class="shelf-edge"></div>
-						<div class="shelf-shadow"></div>
-					</div> -->
 
 					<!-- Updated Reading Status Legend -->
 					<div class="reading-status mt-2 flex justify-center gap-6 text-xs">

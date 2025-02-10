@@ -6,11 +6,12 @@ const bookCollection = defineCollection({
         title: z.string(),
         type: z.enum(["book", "paper"]),
         status: z.enum(["current", "next", "queue", "completed"]),
+        coverImage: z.string(),
+        url: z.string(),
         color: z.object({
             primary: z.string(),
             secondary: z.string(),
         }),
-        coverImage: z.string(),
         order: z.number(),
     }),
 });
