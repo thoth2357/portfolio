@@ -1,9 +1,9 @@
 title: "Pragrammatic Programmer"
 coverImage: "/books/pragmatic-programmer.jpg"
 type: "book"
-status: "current"
+status: "queue"
 url: "https://www.goodreads.com/book/show/4099.The_Pragmatic_Programmer"
 color:
   primary: "#8B4513"
   secondary: "#A0522D"
-order: 1
+order: 2

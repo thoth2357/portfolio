@@ -95,64 +95,66 @@ const otherBooks = sortedBooks.filter(book => book.data.status !== "current");
 			</div>
 
 			<figure id="activity1" class="visible w-full">
-				<div class="bookshelf-container relative p-2 -mt-6">
-					<div class="books-wrapper flex items-end gap-[8px] mb-2 px-6 relative h-[140px]">
-						{/* Currently Reading Book */}
-						{currentBook && (
-							<a href={currentBook.data.url} target="_blank" rel="noopener noreferrer" class="book-link">
-								<div class="book-wrapper current-book" style="height: 120px; width: 85px; margin-right: 12px;">
-									<div class="book-3d">
-										<div class="book-cover">
-											<img 
-												src={currentBook.data.coverImage} 
-												alt={currentBook.data.title}
-												class="w-full h-full object-cover"
-											/>
-											<div class="status-dot current"></div>
-										</div>
+				<div class="bookshelf-container flex items-end gap-2 p-2 -mt-6">
+					{/* Currently Reading Book */}
+					{currentBook && (
+						<a href={currentBook.data.url} target="_blank" rel="noopener noreferrer" class="book-link">
+							<div class="book-wrapper current-book" style="height: 120px; width: 85px; margin-right: 12px;">
+								<div class="book-3d">
+									<div class="book-cover">
+										<img 
+											src={currentBook.data.coverImage} 
+											alt={currentBook.data.title}
+											class="w-full h-full object-cover"
+										/>
+										<div class="status-dot current"></div>
 									</div>
 								</div>
-							</a>
-						)}
+							</div>
+						</a>
+					)}
 
-						{/* Other Books */}
-						{otherBooks.map((book) => (
-							<a href={book.data.url} target="_blank" rel="noopener noreferrer" class="book-link">
-								<div class="book-wrapper" style="height: 115px; width: 70px;">
-									<div class="book-3d">
-										<div class="book-cover">
-											<img 
-												src={book.data.coverImage} 
-												alt={book.data.title}
-												class="w-full h-full object-cover"
-											/>
-											<div class={`status-dot ${book.data.status}`}></div>
-										</div>
+					{/* Other Books */}
+					{otherBooks.map((book) => (
+						<a href={book.data.url} target="_blank" rel="noopener noreferrer" class="book-link">
+							<div class="book-wrapper" style="height: 118px; width: 80px; ">
+								<div class="book-3d">
+									<div class="book-cover">
+										<img 
+											src={book.data.coverImage} 
+											alt={book.data.title}
+											class="w-full h-full object-cover"
+										/>
+										<div class={`status-dot ${book.data.status}`}></div>
 									</div>
 								</div>
-							</a>
-						))}
-					</div>
+							</div>
+						</a>
+					))}
+					{/* Magician emoji holding a torch, facing left */}
+					<!-- <div class="text-5xl select-none ml-6" style="transform: scaleX(-1);">
+						🧙‍♂️
+					</div> -->
+				</div>
 
-					<!-- Updated Reading Status Legend -->
-					<div class="reading-status mt-2 flex justify-center gap-6 text-xs">
-						<span class="flex items-center gap-2">
-							<div class="w-2 h-2 rounded-full bg-emerald-400"></div>
-							Current
-						</span>
-						<span class="flex items-center gap-2">
-							<div class="w-2 h-2 rounded-full bg-amber-400"></div>
-							Next
-						</span>
-						<span class="flex items-center gap-2">
-							<div class="w-2 h-2 rounded-full bg-indigo-400"></div>
-							Queue
-						</span>
-						<span class="flex items-center gap-2">
-							<div class="w-2 h-2 rounded-full bg-neutral-400"></div>
-							Done
-						</span>
-					</div>
+				<!-- Updated Reading Status Legend -->
+				<div class="reading-status mt-2 flex justify-center gap-6 text-xs">
+					<span class="flex items-center gap-2">
+						<div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+						Current
+					</span>
+					<span class="flex items-center gap-2">
+						<div class="w-2 h-2 rounded-full bg-amber-400"></div>
+						Next
+					</span>
+					<span class="flex items-center gap-2">
+						<div class="w-2 h-2 rounded-full bg-indigo-400"></div>
+						Queue
+					</span>
+					<span class="flex items-center gap-2">
+						<div class="w-2 h-2 rounded-full bg-neutral-400"></div>
+						Done
+					</span>
 				</div>
 			</figure>
 

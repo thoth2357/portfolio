@@ -1,0 +1,9 @@
+title: "The Art Of Cyber Warfard"
+coverImage: "/books/cyber-warfare.jpg"
+type: "book"
+status: "queue"
+url: "https://www.amazon.com/Art-Cyberwarfare-Investigators-Ransomware-Cybercrime/dp/1718502141"
+color:
+  primary: "#8B4513"
+  secondary: "#A0522D"
+order: 1

@@ -1,0 +1,9 @@
+title: "Outliers"
+coverImage: "/books/python-logging.jpg"
+type: "book"
+status: "next"
+url: "https://www.amazon.com/Python-Logging-Auditing-Debugging-Through/dp/B0D4VJCQ96"
+color:
+  primary: "#8B4513"
+  secondary: "#A0522D"
+order: 1

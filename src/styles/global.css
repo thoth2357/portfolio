@@ -397,8 +397,8 @@
     position: absolute;
     top: 6px;
     left: 6px;
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
     z-index: 2;
 }
