@@ -10,7 +10,8 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://thoth2357.github.io/portfolio",
+	site: "https://thoth2357.github.io",
+	base: "portfolio"
 	integrations: [
 		mdx(),
 		sitemap(),
